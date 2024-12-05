@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     loadEvents();
+    loadArticles();
     loadMembers();
     loadAboutSection(); 
 });
@@ -34,6 +35,39 @@ function loadEvents() {
             console.error("Error loading events:", error);
             document.querySelector(".events-container").innerHTML = 
                 "<p>Failed to load events. Please try again later.</p>";
+        });
+}
+
+function loadArticles() {
+    fetch("data/articles.json")
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Failed to fetch articles data.");
+            }
+            return response.json();
+        })
+        .then((articles) => {
+            const articlesContainer = document.querySelector(".articles-container");
+            articles.forEach((article) => {
+                const articleCard = document.createElement("div");
+                articleCard.className = "article-card";
+
+                articleCard.innerHTML = `
+                    <img src="${article.image}" alt="${article.title}" class="article-image">
+                    <div class="article-content">
+                        <h3 class="article-title">${article.title}</h3>
+                        <p class="article-description">${article.description}</p>
+                        <a href="${article.link}" target="_blank" class="article-read-more">Read More</a>
+                    </div>
+                `;
+
+                articlesContainer.appendChild(articleCard);
+            });
+        })
+        .catch((error) => {
+            console.error("Error loading articles:", error);
+            document.querySelector(".articles-container").innerHTML =
+                "<p>Failed to load articles. Please try again later.</p>";
         });
 }
 
