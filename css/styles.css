@@ -2,7 +2,7 @@
    DOCUMENT
 ------------------------------- */
 html {
-    scroll-padding-top: 170px; 
+    scroll-padding-top: 150px; 
     max-width: 1200px; /* Maximum width for the entire page */
     margin: 0 auto; /* Center the page horizontally */
     padding: 0 20px; /* Add padding to prevent content from touching edges */
@@ -20,7 +20,6 @@ body {
 /* ------------------------------
    HEADER
 ------------------------------- */
-/* General header styles */
 .header {
     background: #1e1e1e;
     padding: 1rem 0; 
@@ -31,27 +30,6 @@ body {
     top: 0;
     z-index: 1000; 
     border-bottom: 2px solid #03dac6;
-}
-
-/* Logo and title container */
-.header-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Ensures logo is left and title is centered */
-    width: 100%;
-}
-
-.header .logo {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.header .logo img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; 
-    transition: width 0.3s ease, height 0.3s ease;
 }
 
 .header h1 {
@@ -95,25 +73,20 @@ body {
 
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
-    /* Adjust logo size and title */
-    .header-top {
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .logo img {
-        width: 90px; /* Slightly smaller logo */
-        height: 90px;
+    .header {
+        align-items: flex-start; 
     }
 
     .header h1 {
-        font-size: 2rem;  /* Adjust font size of the title */
+        font-size: 2rem;
+        text-align: center;
     }
 
     /* Wrap navigation items */
     .nav ul {
         flex-wrap: wrap;
         gap: 15px;
+        justify-content: center;
     }
 
     .nav ul li a {
@@ -123,13 +96,9 @@ body {
 
 /* Mobile-specific styles */
 @media (max-width: 480px) {
-    .logo img {
-        width: 80px;  /* Smaller logo on mobile */
-        height: 80px;
-    }
-
     .header h1 {
-        font-size: 1.6rem;  /* Reduce the font size of the title */
+        font-size: 1.6rem;
+        text-align: center;
     }
 
     .nav ul {
