@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadEvents();
     loadArticles();
     loadMembers();
-    loadAboutSection(); 
+    loadAboutSection();
 });
 
 function loadEvents() {
@@ -38,6 +38,10 @@ function loadEvents() {
         });
 }
 
+// Load more functionality for articles
+let articlesDisplayed = 4; // Number of articles to display initially
+let articlesData = []; // Store fetched articles here
+
 function loadArticles() {
     fetch("data/articles.json")
         .then((response) => {
@@ -47,22 +51,8 @@ function loadArticles() {
             return response.json();
         })
         .then((articles) => {
-            const articlesContainer = document.querySelector(".articles-container");
-            articles.forEach((article) => {
-                const articleCard = document.createElement("div");
-                articleCard.className = "article-card";
-
-                articleCard.innerHTML = `
-                    <img src="${article.image}" alt="${article.title}" class="article-image">
-                    <div class="article-content">
-                        <h3 class="article-title">${article.title}</h3>
-                        <p class="article-description">${article.description}</p>
-                        <a href="${article.link}" target="_blank" class="article-read-more">Read More</a>
-                    </div>
-                `;
-
-                articlesContainer.appendChild(articleCard);
-            });
+            articlesData = articles; // Store all articles
+            displayArticles(); // Display initial articles
         })
         .catch((error) => {
             console.error("Error loading articles:", error);
@@ -70,6 +60,40 @@ function loadArticles() {
                 "<p>Failed to load articles. Please try again later.</p>";
         });
 }
+
+function displayArticles() {
+    const articlesContainer = document.querySelector(".articles-container");
+    articlesContainer.innerHTML = ""; // Clear previous content
+
+    const articlesToShow = articlesData.slice(0, articlesDisplayed);
+
+    articlesToShow.forEach((article) => {
+        const articleCard = document.createElement("div");
+        articleCard.className = "article-card";
+
+        articleCard.innerHTML = `
+            <img src="${article.image}" alt="${article.title}" class="article-image">
+            <div class="article-content">
+                <h3 class="article-title">${article.title}</h3>
+                <p class="article-description">${article.description}</p>
+                <a href="${article.link}" target="_blank" class="article-read-more">Read More</a>
+            </div>
+        `;
+
+        articlesContainer.appendChild(articleCard);
+    });
+
+    // Hide "Load More" button if all articles are displayed
+    if (articlesDisplayed >= articlesData.length) {
+        document.getElementById("load-more").style.display = "none";
+    }
+}
+
+// Event listener for "Load More" button
+document.getElementById("load-more").addEventListener("click", () => {
+    articlesDisplayed += 4; // Load 4 more articles
+    displayArticles(); // Re-render the articles
+});
 
 function loadMembers() {
     fetch("data/members.json")
@@ -92,9 +116,6 @@ function loadMembers() {
                         <a href="mailto:${member.email}" class="member-email">${member.email}</a>
                     </div>
                 `;
-                
-                // to add designation if required for the future
-                //<p class="member-designation">${member.designation}</p>
 
                 membersContainer.appendChild(memberCard);
             });
@@ -106,3 +127,7 @@ function loadMembers() {
         });
 }
 
+// Load about section data (if needed)
+function loadAboutSection() {
+    // Add functionality here if required to load dynamic content in the about section.
+}
