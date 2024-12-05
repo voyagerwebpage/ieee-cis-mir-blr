@@ -491,3 +491,61 @@ footer p {
     font-size: 1rem;
     color: #cfcfcf;
 }
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    /* Adjust general layout */
+    html {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    header {
+        text-align: center;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Stack member cards vertically */
+    .member-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .member-card img {
+        margin: 0 auto;
+    }
+
+    /* Events section: One card per row */
+    .event-card {
+        width: 100%; /* Full width for smaller screens */
+        margin-bottom: 20px;
+    }
+
+    /* Articles section: Adjust grid */
+    .article-card {
+        width: 100%; /* Full width for smaller screens */
+        margin-bottom: 20px;
+    }
+}
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+    /* Reduce padding */
+    html {
+        padding: 0 5px;
+    }
+
+    .about-container {
+        font-size: 14px;
+    }
+
+    .contact-card {
+        font-size: 12px;
+    }
+}
