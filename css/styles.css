@@ -2,7 +2,7 @@
    DOCUMENT
 ------------------------------- */
 html {
-    scroll-padding-top: 150px; 
+    scroll-padding-top: 170px; 
     max-width: 1200px; /* Maximum width for the entire page */
     margin: 0 auto; /* Center the page horizontally */
     padding: 0 20px; /* Add padding to prevent content from touching edges */
@@ -155,6 +155,10 @@ main h2 {
 /* ------------------------------
    EVENTS SECTION
 ------------------------------- */
+#events {
+    padding: 10px 20px;
+}
+
 .events-container {
     display: flex;
     flex-wrap: wrap;
@@ -212,6 +216,12 @@ main h2 {
     color: #81c784;
 }
 
+/* ------------------------------
+   MEMBERS SECTION
+------------------------------- */
+#members {
+    padding: 10px 20px;
+}
 
 .members-container {
     display: flex;
@@ -296,9 +306,8 @@ main h2 {
 /* ------------------------------
    ARTICLES SECTION
 ------------------------------- */
-/* Articles Section */
 #articles {
-    padding: 50px 20px;
+    padding: 10px 20px;
     color: #cfcfcf;
 }
 
@@ -313,7 +322,7 @@ main h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    justify-content: center; /* Centers the articles horizontally */
+    justify-content: center;
 }
 
 .article-card {
