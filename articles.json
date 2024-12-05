@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Article 1",
+        "description": "An introduction to Article by Article Author, this has longer introduction to check word wrapping and box formatting",
+        "link": "https://www.linkedin.com/in/akshat-gururaj/",
+        "image": "images/articles/defaultImage.png"
+    },
+    {
+        "title": "An extended article name to check word wrapping",
+        "description": "An introduction to Article by Article Author",
+        "link": "https://www.linkedin.com/in/akshat-gururaj/",
+        "image": "images/articles/defaultImage.png"
+    },
+    {
+        "title": "Article 2",
+        "description": "An introduction to Article by Article Author",
+        "link": "https://www.linkedin.com/in/akshat-gururaj/",
+        "image": "images/articles/defaultImage.png"
+    },
+    {
+        "title": "Article 2",
+        "description": "An introduction to Article by Article Author",
+        "link": "https://www.linkedin.com/in/akshat-gururaj/",
+        "image": "images/articles/defaultImage.png"
+    }
+]
