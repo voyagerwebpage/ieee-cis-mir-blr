@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Member Name",
+        "image": "images/members/defaultProfilePicture.png",
+        "email": "member@gmail.com"
+    },
+    {
+        "name": "Member Name",
+        "image": "images/members/defaultProfilePicture.png",
+        "email": "member@gmail.com"
+    },
+    {
+        "name": "Member Name",
+        "image": "images/members/defaultProfilePicture.png",
+        "email": "member@gmail.com"
+    }
+]
