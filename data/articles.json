@@ -1,7 +1,9 @@
 [
     {
-        "name": "Akshat G",
-        "image": "images/members/AkshatG.jpg",
-        "email": "akshat.gururaj@ieee.org"
+        "title": "The Future of AI",
+        "description": "Exploring the advancements in artificial intelligence and its implications.",
+        "author": "Akshat G & Manas Waykole",
+        "link": "https://www.linkedin.com/pulse/swarm-intelligence-nature-inspired-solutions-ieee-cis-mitblr-znt9f/?trackingId=4y1Z0C7Asfx5FxCF4fDhuw%3D%3D",
+        "image": "images/articles/SwarmIntelligence_Nature_Inspired_Solutions.jpg"
     }
 ]
